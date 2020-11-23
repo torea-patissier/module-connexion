@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db= mysqli_connect("localhost","root","","moduleconnexion"); // connexion a ma base de donné
+$db= mysqli_connect("localhost","root","root","moduleconnexion"); // connexion a ma base de donné
 
 $requete= "SELECT * FROM utilisateurs WHERE id='" .$_SESSION['id']."'"; // preparer la demande
 
@@ -14,31 +14,31 @@ $users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style.css" rel="stylesheet">
+    <link href="../stylecss/style.css" rel="stylesheet">
     <title>Profil</title>
 </head>
 <body>
 <header>
-    <nav class="navbar">
-            <a class="navlink" href="index.php">Accueil</a>
-            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
-            <a class="navlink" href="../admin/admin.php">Admin</a>
+        <nav class="navbar">
+            <a class="navlink" href="../index/index.php">Accueil</a>
         </nav>
     </header>
     <div class="formulaire">
-                <h1 class="h1profil">Modifier vos information :</h1>
+                <h1 class="h1profil">Profil</h1>
             <form action="profil.php" method="POST">
                 <label for="nom">Nom</label> <br>
-                <input class="nom"type="text" name="nom" placeholder="<?php echo $users['nom']; ?>"required><br>
+                <input class="nom"type="text" name="nom" placeholder="<?php echo $users['nom']; ?>"><br>
                 <label for="prenom">Prénom</label><br>
-                <input class="prenom"type="text" name="prenom" placeholder="<?php echo $users['prenom'] ?>"required><br>
+                <input class="prenom"type="text" name="prenom" placeholder="<?php echo $users['prenom'] ?>"><br>
                 <label for="login">Login</label><br>
-                <input class="identifiant"type="text" name="login"placeholder="<?php echo $users['login'] ?>"required><br>
+                <input class="identifiant"type="text" name="login"placeholder="<?php echo $users['login'] ?>"><br>
                 <label for="password">Mot de passe</label><br>
-                <input class="password"type="text" name="password"placeholder="<?php echo $users['password'] ?>"required><br>
+                <input class="password"type="text" name="password"placeholder="<?php echo $users['password'] ?>"><br>
                 <label for="cpassword">Confirmer le mot de passe</label><br>
-                <input class="password"type="text" name="cpassword"placeholder="<?php echo $users['password'] ?>"required><br>
+                <input class="password"type="text" name="cpassword"placeholder="<?php echo $users['password'] ?>"><br>
                 <input class="submit"type="submit" name="send"value="MODIFIER">
+                <input class="submit"type="submit" name="deco"value="DECONNEXION" onclick="alert('Vous êtes déconnecté')">
+
             </form>
     </div>
 </body>
@@ -59,14 +59,16 @@ if(isset($_POST['send'])){
             exit("Vos mots de passe ne correspondent pas");
 
             }else{
-                $requete = "UPDATE `utilisateurs` SET `login` = '$login',  `prenom` = '$prenom', `nom` = '$nom', `password` = '$password' WHERE `id` = '".$_SESSION['id']."'";
+                $requete = "UPDATE utilisateurs SET login = '$login',  prenom = '$prenom', nom = '$nom', password = '$password' WHERE id = '".$_SESSION['id']."'";
                 $query = mysqli_query($db, $requete);
-                header('location:http://localhost/Travail/module-connexion/profil/profil.php');
+                header('location:http://localhost:8888/Travail/module-connexion/profil/profil.php');
                 echo "Vos données sont modifié";
 
     }
 }
-
-
+if(isset($_POST['deco'])){
+    session_destroy();
+    header('location:http://localhost:8888/Travail/module-connexion/index/index.php');
+}
 
 ?>

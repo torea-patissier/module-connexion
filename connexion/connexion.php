@@ -6,15 +6,13 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style.css" rel="stylesheet">
+    <link href="../stylecss/style.css" rel="stylesheet">
     <title>Connexion</title>
 </head>
 <body>
     <header>
-    <nav class="navbar">
-            <a class="navlink" href="index.php">Accueil</a>
-            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
-            <a class="navlink" href="../admin/admin.php">Admin</a>
+        <nav class="navbar">
+            <a class="navlink" href="../index/index.php">Accueil</a>
         </nav>
     </header>
     <main>
@@ -31,7 +29,7 @@ session_start();
             <input class="password"type="password" name="password" id="password" placeholder="Mot de passe"> <br>
 
             <label for="seconnecter"></label>
-            <input class="submit"type="submit"value="SE CONNECTER" name="connecter">
+            <a href="../index/index.php"><input class="submit"type="submit"value="SE CONNECTER" name="connecter"></a>
         </div>
         </form>
     </main>
@@ -45,15 +43,15 @@ if(!empty($_POST)){
     $password = htmlspecialchars($_POST['password']);      // $ deviens $postpassword
 
         $requete = "SELECT * FROM utilisateurs WHERE login = '$username' AND password = '$password' ";    // conxien a sql
-        $db = mysqli_connect("localhost", "root", "", "moduleconnexion");     // connexion a la bdd 
+        $db = mysqli_connect("localhost", "root", "root", "moduleconnexion");     // connexion a la bdd 
         $query = mysqli_query($db,$requete);     // lier connexion et requete
         $users = mysqli_fetch_assoc($query);    // recupere une ligne de resultat sous de tableau associatif   
             if(isset($users)){         
                 $_SESSION['id'] = $users['id'];         
-                header('Location: http://localhost/Travail/module-connexion/profil/profil.php');     
+                header('Location: http://localhost:8888/Travail/module-connexion/profil/profil.php');     
             }     
             if($username == 'admin' && $password == 'admin')
         {         
-                header('Location: http://localhost/Travail/module-connexion/admin/admin.php');     
+                header('Location: http://localhost:8888/Travail/module-connexion/admin/admin.php');     
             }     
             else{echo 'Le login ou le password sont incorrects, veuillez réessayer.';     } } ?>
