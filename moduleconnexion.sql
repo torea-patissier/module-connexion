@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : Dim 22 nov. 2020 à 17:38
+-- Généré le : lun. 23 nov. 2020 à 16:08
 -- Version du serveur :  5.7.30
 -- Version de PHP : 7.3.21
 
@@ -40,7 +40,7 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin'),
-(2, 'toreapat', 'Toréa', 'Patissier', '09EU0IJD2I'),
+(2, 'Jfive', 'five', 'Jackson', 'okok'),
 (3, 'Tonym', 'Montana', 'Tony', '1O2PZK9SK4FJ'),
 (4, 'JeanP', 'Paté', 'Jean', 'E230IEJ0X8J'),
 (5, 'MichelJ', 'Michel', 'Jean', '09K1093K1J'),
@@ -48,7 +48,18 @@ INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`) VALUES
 (7, 'LeaP', 'Lea', 'Ponzi', '29DK02D4UF'),
 (8, 'Jmoinard', 'Jean', 'Moinard', '2309KDK4'),
 (9, 'CyrilB', 'Cyril', 'Baye', '3EKO39C'),
-(10, 'NunoB', 'Nuno', 'Barbosa', 'SOI3DNUFH4');
+(10, 'NunoB', 'Nuno', 'Barbosa', 'SOI3DNUFH4'),
+(11, 'Jlasalle', 'Jean', 'Lasalle', 'sosomaness'),
+(12, 'i', 'i', 'i', 'i'),
+(13, 'rub', 'rub', 'rub', 'rub'),
+(14, 'pat', 'pat', 'pat', 'pat'),
+(15, 'tes', 'tes', 'tes', 'tes'),
+(16, 'o', 'o', 'o', 'o'),
+(17, 'a', 'a', 'a', 'a'),
+(18, 'b', 'b', 'b', 'b'),
+(19, 'c', 'c', 'c', 'c'),
+(20, 'u', 'u', 'u', 'u'),
+(21, 'po', 'po', 'po', 'po');
 
 --
 -- Index pour les tables déchargées
@@ -68,7 +79,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
