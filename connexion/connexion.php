@@ -31,7 +31,7 @@ session_start();
             <input class="password"type="password" name="password" id="password" placeholder="Mot de passe"> <br>
 
             <label for="seconnecter"></label>
-            <a href="../profil/profil.php"><input class="submit"type="submit"value="SE CONNECTER" name="connecter"></a>
+            <a href="../index/index.php"><input class="submit"type="submit"value="SE CONNECTER" name="connecter"></a>
         </div>
         </form>
     </main>
