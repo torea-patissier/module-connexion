@@ -1,33 +1,39 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="inscription.css" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
+      <link rel="stylesheet" type="text/css" href="inscription.css" />
+    <link href="../style.css" rel="stylesheet">
     <title>Connexion</title>
 </head>
-
 <body>
     <header>
-        <h1>Connexion</h1>
+    <nav class="navbar">
+            <a class="navlink" href="index.php">Accueil</a>
+            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
+            <a class="navlink" href="../admin/admin.php">Admin</a>
+        </nav>
     </header>
     <main>
-        <form action="connexion.php" method="POST">
+        <div class="formulaire2">
+            <div class="h1connexion">
+                <h1>Connexion</h1>
+            </div>
+            <form action="connexion.php" method="POST">
 
-            <label for="connexion">Nom de compte</label>
-            <input type="text" name="login" id="login">
+            <label for="connexion"></label>
+            <input class="identifiant" type="text" name ="login" id="login"placeholder="Nom de compte"> <br>
 
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password">
+            <label for="password"></label>
+            <input class="password"type="password" name="password" id="password" placeholder="Mot de passe"> <br>
 
             <label for="seconnecter"></label>
-            <input type="submit" value="Se connecter" name="connecter">
+            <input class="submit"type="submit"value="SE CONNECTER" name="connecter">
+        </div>
         </form>
     </main>
     <footer>

@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(image/bg.jpeg);
+    
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(17, 17, 17);
+    height: 50px;
+    align-items: center;
+}
+.navlink{
+    text-decoration: none;
+    color: rgba(255, 250, 250, 0.863);
+    font-size: x-large;
+}
+.navlink:hover{
+    color: white;
+}
+.img-netflix{
+    display: flex;
+    justify-content: center;
+}
+.h1accueil, .h1profil{
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    font-size: 300%;
+    color: white;
+}
+.paccueil{
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    font-size: 150%;
+    color: white;
+}
+.bouton3{
+    display: block;
+    justify-content: center;
+}
+.button1{
+    margin: 0 15px;
+}
+.button {
+    border-top: 1px solid #ff0000;
+    background: #590000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#590000));
+    background: -webkit-linear-gradient(top, #ff0000, #590000);
+    background: -moz-linear-gradient(top, #ff0000, #590000);
+    background: -ms-linear-gradient(top, #ff0000, #590000);
+    background: -o-linear-gradient(top, #ff0000, #590000);
+    padding: 20px 40px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 21px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+.button:hover {
+    border-top-color: #ffffff;
+    background: #ffffff;
+    color: #000000;
+    }
+.bouton3{
+    display: flex;
+    flex-direction: row;
+}
+
+/* PAGE DACCUEIL */
+
+/* INSCRIPTION */
+
+.h1inscription{
+    text-align: center;
+    color: white;
+    margin-top: -2cm;
+    
+}
+.formulaire{
+    padding-top: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 0 35%;
+    padding: 8% 0;
+    margin-top: 4%;
+    box-shadow: 5px 5px 5px black;
+}
+.nom, .prenom, .identifiant, .password{
+    margin: 0 0 5px;
+    width: 90%;
+    height: 30px;
+    font-size: large;
+}
+.submit {
+    margin-top: 8%;
+    border-top: 1px solid #ff0000;
+    background: #590000;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#590000));
+    background: -webkit-linear-gradient(top, #ff0000, #590000);
+    background: -moz-linear-gradient(top, #ff0000, #590000);
+    background: -ms-linear-gradient(top, #ff0000, #590000);
+    background: -o-linear-gradient(top, #ff0000, #590000);
+    padding: 20px 40px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-size: 21px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+    }
+.submit:hover {
+    border-top-color: #ffffff;
+    background: #ffffff;
+    color: #000000;
+    }
+/*INSCRIPTION*/
+/* CONNEXION */
+
+.h1connexion{
+    text-align: center;
+    color: white;
+    margin-top: -2cm;
+    margin-bottom: 1cm;
+
+}
+.formulaire2{
+    color: white;
+    padding-top: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 0 35%;
+    padding: 8% 0;
+    margin-top: 4%;
+    box-shadow: 5px 5px 5px black;
+}
+.identifiant, .password{
+    margin: 0 0 5px;
+    width: 90%;
+    height: 30px;
+    font-size: large;
+}
+/* CONNEXION */
+/* PROFIL */
+label{
+    color: white;
+    font-size: x-large;
+}
+.h1profil{
+    text-align: center;
+    color: white;
+    margin-top: -2cm;
+    margin-bottom: 1cm;
+
+}
+/* PROFIL */
