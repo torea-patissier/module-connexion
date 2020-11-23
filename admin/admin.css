@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../admin/netflixback.jpg);
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+table {
+   color: whitesmoke; 
+   background-color: rgba(0, 0, 0, 0.685);
+   border-color: whitesmoke;
+   border-style: solid;
+   font-size: x-large;
+   border-spacing: 10px;
+   border-collapse: collapse;
+   margin-left: 30%;
+   transform: translateY(20%);
+}
+
+th, td{
+    border-style: solid;
+    border-radius: 0.px;
+    border-color: whitesmoke;
+}
+
+.tabadmin{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
