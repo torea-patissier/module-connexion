@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body{
     margin: 0;
     padding: 0;
-    background-image: url(image/bg.jpeg);
+    background-image: url(../image/bg.jpeg);
+    font-family: 'Montserrat', sans-serif;
     
 }
 nav{
@@ -160,9 +162,10 @@ label{
     font-size: x-large;
 }
 .h1profil{
+    font-size: xx-large;
     text-align: center;
     color: white;
-    margin-top: -2cm;
+    margin-top: -3cm;
     margin-bottom: 1cm;
 
 }
