@@ -19,9 +19,9 @@ $users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
 </head>
 <body>
 <header>
-    <nav class="navbar">
-            <a class="navlink" href="index.php">Accueil</a>
-            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
+        <nav class="navbar">
+            <a class="navlink" href="../index/index.php">Accueil</a>
+            <a class="navlink" href="../connexion/connexion.php">Connexion</a>
             <a class="navlink" href="../admin/admin.php">Admin</a>
         </nav>
     </header>

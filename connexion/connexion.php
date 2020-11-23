@@ -11,9 +11,9 @@ session_start();
 </head>
 <body>
     <header>
-    <nav class="navbar">
-            <a class="navlink" href="index.php">Accueil</a>
-            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
+        <nav class="navbar">
+            <a class="navlink" href="../index/index.php">Accueil</a>
+            <a class="navlink" href="../connexion/connexion.php">Connexion</a>
             <a class="navlink" href="../admin/admin.php">Admin</a>
         </nav>
     </header>
@@ -31,7 +31,7 @@ session_start();
             <input class="password"type="password" name="password" id="password" placeholder="Mot de passe"> <br>
 
             <label for="seconnecter"></label>
-            <input class="submit"type="submit"value="SE CONNECTER" name="connecter">
+            <a href="../profil/profil.php"><input class="submit"type="submit"value="SE CONNECTER" name="connecter"></a>
         </div>
         </form>
     </main>

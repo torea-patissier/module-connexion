@@ -11,14 +11,14 @@
 <body class="body">
     <header>
     <nav class="navbar">
-            <a class="navlink" href="index.php">Accueil</a>
-            <a class="navlink" href="../inscription/inscription.php">Inscription</a>
+            <a class="navlink" href="../index/index.php">Accueil</a>
+            <a class="navlink" href="../connexion/connexion.php">Connexion</a>
             <a class="navlink" href="../admin/admin.php">Admin</a>
         </nav>
     </header>
     <main>
         <div class="img-netflix">
-            <img src="image/netflix.png" alt="">
+            <img src="../image/netflix.png" alt="">
         </div>
         <div>
             <h1 class="h1accueil">Films, séries TV et bien plus en illimité.</h1>
@@ -32,11 +32,11 @@
         <div class="bouton3">
             <div class="button1">
                 <label for="input"></label>
-                <input type="button" class="button" value="S'IDENTIFIER">
+                <a href="../connexion/connexion.php"><input type="button" class="button" value="S'IDENTIFIER"></a>
             </div>
             <div class="button2"></div>
                 <label for="input"></label>
-                <input type="button" class="button" value="S'INSCRIRE">
+                <a href="../inscription/inscription.php"><input type="button" class="button" value="S'INSCRIRE"></a>
             </div>
         </div>
     </footer>
