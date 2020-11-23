@@ -1,23 +1,28 @@
 <?php
+
 session_start();
 
-$db= mysqli_connect("localhost","root","","moduleconnexion"); // connexion a ma base de donné
+$db = mysqli_connect("localhost", "root", "root", "moduleconnexion"); // Connnexion à MySQL
 
-$requete= "SELECT * FROM utilisateurs WHERE id='" .$_SESSION['id']."'"; // preparer la demande
+$requete = "SELECT * FROM utilisateurs WHERE id = '" . $_SESSION['id'] . "'"; // Préparer la requête
 
-$query = mysqli_query($db, $requete); // lier la connexion a la requete
-$users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
+$query = mysqli_query($db, $requete); // Lier La connexion, avec la requête
+$users = mysqli_fetch_assoc($query); // Récupère une ligne de résultat sous forme de Tab associatif
+
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" rel="stylesheet">
     <title>Profil</title>
 </head>
+  
 <body>
+  
 <header>
     <nav class="navbar">
             <a class="navlink" href="index.php">Accueil</a>
@@ -25,6 +30,7 @@ $users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
             <a class="navlink" href="../admin/admin.php">Admin</a>
         </nav>
     </header>
+  
     <div class="formulaire">
                 <h1 class="h1profil">Modifier vos information :</h1>
             <form action="profil.php" method="POST">
@@ -41,32 +47,32 @@ $users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
                 <input class="submit"type="submit" name="send"value="MODIFIER">
             </form>
     </div>
+  
 </body>
 </html>
+
 <?php 
 
 if(isset($_POST['send'])){
-
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    if(!isset($_POST)){
-        exit("Veuillez remplir tous les champs.");
+        if ($_POST['password'] != $_POST['confpass']) { // On vérifie que le MDP est bien le même lors de la confirmation, sinon Echo msg d'erreur
+            exit('Modification du mot de passe incorrecte');
+        }
 
-        }elseif(($_POST['password']) != ($_POST['cpassword'])){
-            exit("Vos mots de passe ne correspondent pas");
-
-            }else{
-                $requete = "UPDATE `utilisateurs` SET `login` = '$login',  `prenom` = '$prenom', `nom` = '$nom', `password` = '$password' WHERE `id` = '".$_SESSION['id']."'";
-                $query = mysqli_query($db, $requete);
-                header('location:http://localhost/Travail/module-connexion/profil/profil.php');
-                echo "Vos données sont modifié";
-
+    else{
+        $requete2 = "UPDATE utilisateurs SET 
+        `nom` = '$nom',
+         `prenom` = '$prenom' ,
+         `login` = '$login',
+         `password` = '$password' WHERE `id` = '".$_SESSION['id']."'";
+        $query = mysqli_query($db, $requete2); // Lier La connexion, avec la requête
+        header('Location: http://localhost:8888//module-connexion/profil/profil.php');// Renvoi sur la page admin
+        echo ("Envoyé");
     }
 }
-
-
 
 ?>
