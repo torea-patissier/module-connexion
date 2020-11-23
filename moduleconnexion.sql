@@ -60,9 +60,8 @@ INSERT INTO `utilisateurs` (`id`, `login`, `prenom`, `nom`, `password`) VALUES
 (19, 'c', 'c', 'c', 'c'),
 (20, 'u', 'u', 'u', 'u'),
 (21, 'po', 'po', 'po', 'po');
-
 --
--- Index pour les tables déchargées
+-- Index pour les tables déchargées!
 --
 
 --

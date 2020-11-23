@@ -2,7 +2,7 @@
 
 session_start();
 
-$db = mysqli_connect("localhost", "root", "root", "moduleconnexion"); // Connnexion à MySQL
+$db = mysqli_connect("localhost", "root", "", "moduleconnexion"); // Connnexion à MySQL
 
 $requete = "SELECT * FROM utilisateurs WHERE id = '" . $_SESSION['id'] . "'"; // Préparer la requête
 
@@ -68,13 +68,13 @@ if(isset($_POST['send'])){
             }else{
                 $requete = "UPDATE utilisateurs SET login = '$login',  prenom = '$prenom', nom = '$nom', password = '$password' WHERE id = '".$_SESSION['id']."'";
                 $query = mysqli_query($db, $requete);
-                header('location:http://localhost:8888/Travail/module-connexion/profil/profil.php');
+                header('location:http://localhost/module-connexion/profil/profil.php');
                 echo "Vos données sont modifié";
     }
 }
 if(isset($_POST['deco'])){
     session_destroy();
-    header('location:http://localhost:8888/Travail/module-connexion/index/index.php');
+    header('location:http://localhost/module-connexion/index/index.php');
 }
 
 ?>

@@ -30,7 +30,7 @@
     </footer>
 <?php
 session_start();
-$db = mysqli_connect("localhost","root","root","moduleconnexion"); // Connnexion à MySQL
+$db = mysqli_connect("localhost","root","","moduleconnexion"); // Connnexion à MySQL
 $requete = "SELECT * FROM utilisateurs"; // Ecrire la requête SQL tel que dans PhpMyAdmin
 $query = mysqli_query($db,$requete); // Lier La connexion, avec la requête
 
