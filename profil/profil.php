@@ -1,28 +1,34 @@
 <?php
+
 session_start();
 
-$db= mysqli_connect("localhost","root","root","moduleconnexion"); // connexion a ma base de donné
+$db = mysqli_connect("localhost", "root", "root", "moduleconnexion"); // Connnexion à MySQL
 
-$requete= "SELECT * FROM utilisateurs WHERE id='" .$_SESSION['id']."'"; // preparer la demande
+$requete = "SELECT * FROM utilisateurs WHERE id = '" . $_SESSION['id'] . "'"; // Préparer la requête
 
-$query = mysqli_query($db, $requete); // lier la connexion a la requete
-$users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
+$query = mysqli_query($db, $requete); // Lier La connexion, avec la requête
+$users = mysqli_fetch_assoc($query); // Récupère une ligne de résultat sous forme de Tab associatif
+
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../stylecss/style.css" rel="stylesheet">
     <title>Profil</title>
 </head>
+  
 <body>
+  
 <header>
         <nav class="navbar">
             <a class="navlink" href="../index/index.php">Accueil</a>
         </nav>
     </header>
+  
     <div class="formulaire">
                 <h1 class="h1profil">Profil</h1>
             <form action="profil.php" method="POST">
@@ -41,12 +47,13 @@ $users = mysqli_fetch_assoc($query); // lis la ligne ID selectionner
 
             </form>
     </div>
+  
 </body>
 </html>
+
 <?php 
 
 if(isset($_POST['send'])){
-
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $login = $_POST['login'];
@@ -63,7 +70,6 @@ if(isset($_POST['send'])){
                 $query = mysqli_query($db, $requete);
                 header('location:http://localhost:8888/Travail/module-connexion/profil/profil.php');
                 echo "Vos données sont modifié";
-
     }
 }
 if(isset($_POST['deco'])){
