@@ -45,17 +45,17 @@ if (!empty($_POST)) { // Si POST n'est pas vide
     $username = htmlspecialchars($_POST['login']); //$ devient $PLogin
     $password = htmlspecialchars($_POST['password']); // $ devient PPwd
 
-    $db = mysqli_connect("localhost", "root", "", "moduleconnexion"); //Connexion à la Db
+    $db = mysqli_connect("localhost", "root", "root", "moduleconnexion"); //Connexion à la Db
     $requete = "SELECT * FROM utilisateurs WHERE login = '$username' AND password = '$password' "; // Requête SQL
     $query = mysqli_query($db, $requete); // Lier Connexion et requête
     $users = mysqli_fetch_assoc($query); // Récupère une ligne de résultat sous forme de Tab associatif
 
     if (isset($users)) { // Si l'user se connecte
         $_SESSION['id'] = $users['id']; 
-        header('Location: http://localhost/module-connexion/profil/profil.php'); // Renvoi sur la page profil
+        header('Location: http://localhost:8888/module-connexion/profil/profil.php'); // Renvoi sur la page profil
     }
     if ($username == 'admin' && $password == 'admin') { // Si l'ID et PwD = admin
-        header('Location: http://localhost/module-connexion/admin/admin.php');// Renvoi sur la page admin
+        header('Location: http://localhost:8888/module-connexion/admin/admin.php');// Renvoi sur la page admin
     } else {
         echo 'Le login ou le password sont incorrects, veuillez réessayer.';
     }

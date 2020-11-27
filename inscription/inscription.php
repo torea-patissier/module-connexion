@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../stylecss/style.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <title>Inscription</title>
 </head>
@@ -13,7 +12,7 @@
 <body>
 
 <?php
-$db = mysqli_connect("localhost", "root", "", "moduleconnexion");
+$db = mysqli_connect("localhost", "root", "root", "moduleconnexion");
 
 //var_dump($_POST);
 if (isset($_POST["sinscrire"])){
@@ -22,9 +21,9 @@ if (isset($_POST["sinscrire"])){
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $select = mysqli_query($db, "SELECT * FROM utilisateurs WHERE login = '" . $_POST["login"] . "'");
+    $select = mysqli_query($db, "SELECT * FROM utilisateurs WHERE login = '" . $_POST["login"] . "'");// Voir si un login de ce nom existe déjà
     if (mysqli_num_rows($select)) {
-        exit('Ce login est déjà utilisé');
+        exit('Ce login est déjà utilisé');// Fin de commande
     } 
     elseif ($_POST['password'] != $_POST['confpass']) {
         exit('Vos mots de passe ne correspondent pas');
@@ -32,7 +31,7 @@ if (isset($_POST["sinscrire"])){
         $requete = "INSERT INTO utilisateurs(login, prenom, nom, password) VALUES( '$login', '$prenom', '$nom', '$password')";
         $query = mysqli_query($db, $requete);
         $_SESSION['login'] = $_POST['login'];
-        header('Location: http://localhost/module-connexion/connexion/connexion.php');
+        header('Location: http://localhost:8888/module-connexion/connexion/connexion.php');
     }
 }
 
