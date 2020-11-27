@@ -12,7 +12,7 @@
 <body>
 
 <?php
-$db = mysqli_connect("localhost", "root", "root", "moduleconnexion");
+$db = mysqli_connect("localhost", "root", "", "moduleconnexion");
 
 //var_dump($_POST);
 if (isset($_POST["sinscrire"])){
@@ -31,7 +31,7 @@ if (isset($_POST["sinscrire"])){
         $requete = "INSERT INTO utilisateurs(login, prenom, nom, password) VALUES( '$login', '$prenom', '$nom', '$password')";
         $query = mysqli_query($db, $requete);
         $_SESSION['login'] = $_POST['login'];
-        header('Location: http://localhost:8888/module-connexion/connexion/connexion.php');
+        header('Location: http://localhost/module-connexion/connexion/connexion.php');
     }
 }
 
